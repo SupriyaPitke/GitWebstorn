@@ -1,0 +1,89 @@
+<form
+    novalidate
+    [formGroup]="screenFormGroup"
+>
+    <div
+        style="display: flex; flex-direction: column"
+        magic="Prg2"
+        class="Prg2Props"
+    >
+        <div style="display: flex; flex-direction: row">
+            <div class="example-container mat-elevation-z8 Table1TableContainerProps">
+                <mat-table
+                    #table
+                    [dataSource]="dataSource"
+                    class="Table1Props"
+                    matSort
+                    matSortDisableClear
+                    (matSortChange)="tableService.sortData($event)"
+                >
+                    <ng-container
+                        magic="Column4"
+                        matColumnDef="Column4"
+                    >
+                        <mat-header-cell *matHeaderCellDef> asd </mat-header-cell>
+                        <mat-cell
+                            *matCellDef="let row"
+                            magicMark="magicTableRowContainer"
+                        >
+                            <div
+                                style="display: flex; flex-direction: row"
+                                *ngIf="mg.ifRowCreated(row)"
+                            >
+                                <label
+                                    magic="asd"
+                                    [rowId]="row.rowId"
+                                    class="asdProps hidden_border"
+                                >
+                                    {{mg.getValue('asd', row.rowId) }}
+                                    </label>
+            </div>
+            </mat-cell>
+            </ng-container>
+            <ng-container
+                magic="Column5"
+                matColumnDef="Column5"
+            >
+                <mat-header-cell *matHeaderCellDef> sds </mat-header-cell>
+                <mat-cell
+                    *matCellDef="let row"
+                    magicMark="magicTableRowContainer"
+                >
+                    <div
+                        style="display: flex; flex-direction: row"
+                        *ngIf="mg.ifRowCreated(row)"
+                    >
+                        <label
+                            magic="sds"
+                            [rowId]="row.rowId"
+                            class="sdsProps hidden_border"
+                        >
+                            {{mg.getValue('sds', row.rowId) }}
+                            </label>
+        </div>
+        </mat-cell>
+        </ng-container>
+        <mat-header-row
+            *matHeaderRowDef="displayedColumns"
+            class="Table1_table_headerRowProps"
+        ></mat-header-row>
+            <mat-row
+                *matRowDef="let row; columns: displayedColumns;"
+                class="Table1_table_rowProps"
+                [ngClass]="{ 'selected': selection.isSelected(row)}"
+                magicMark="magicTableRowContainer"
+                (click)="tableService.selectRow(row.rowId)"
+            >
+                </mat-row>
+                </mat-table>
+                <mat-paginator
+                    #paginator
+                    [pageSize]="10"
+                    [pageSizeOptions]="[5, 10, 20]"
+                    (page)="tableService.mgOnPaginateChange($event)"
+                >
+                    </mat-paginator>
+                    </div>
+                    </div>
+                    </div>
+                    </form>

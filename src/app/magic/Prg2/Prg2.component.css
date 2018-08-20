@@ -1,0 +1,31 @@
+/*this is a component css*/
+
+.Prg2Props {}
+
+.Table1TableContainerProps {}
+
+.Table1Props {
+    border: lightskyblue solid 1px;
+}
+
+.Table1_table_rowProps {}
+
+.Table1_table_rowProps:hover {
+    background-color: #EEEEEE;
+}
+
+.selected {
+    background: #F5F5F5;
+}
+
+.Column4Props {}
+
+.mat-column-Column4 {}
+
+.asdProps {}
+
+.Column5Props {}
+
+.mat-column-Column5 {}
+
+.sdsProps {}
