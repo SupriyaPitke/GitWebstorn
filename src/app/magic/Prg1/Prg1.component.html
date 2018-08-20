@@ -1,0 +1,55 @@
+<form
+    novalidate
+    [formGroup]="screenFormGroup"
+>
+    <div
+        style="display: flex; flex-direction: column"
+        magic="Prg1"
+        class="Prg1Props"
+    >
+        <div style="display: flex; flex-direction: row">
+            <label
+                magic="Label3"
+                class="Label3Props"
+            >
+                a:</label>
+                <mat-form-field class="aProps">
+                    <div>
+                        <input
+                            matInput
+                            magic="a"
+                            formControlName="a"
+                            pattern="^.{0,11}$"
+                        >
+                            <div *ngIf="(screenFormGroup.get('a').dirty) && (
+screenFormGroup.get('a').hasError('pattern')
+)">
+                                <p>{{ mg.getErrMsg('a') }}</p>
+                            </div>
+                    </div>
+                </mat-form-field>
+        </div>
+        <div style="display: flex; flex-direction: row">
+            <label
+                magic="Label4"
+                class="Label4Props"
+            >
+                b:</label>
+                <mat-form-field class="bProps">
+                    <div>
+                        <input
+                            matInput
+                            magic="b"
+                            formControlName="b"
+                            pattern="^.{0,11}$"
+                        >
+                            <div *ngIf="(screenFormGroup.get('b').dirty) && (
+screenFormGroup.get('b').hasError('pattern')
+)">
+                                <p>{{ mg.getErrMsg('b') }}</p>
+                            </div>
+                    </div>
+                </mat-form-field>
+        </div>
+        </div>
+        </form>
